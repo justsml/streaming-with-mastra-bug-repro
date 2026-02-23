@@ -3,10 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsx index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@ai-sdk/openai": "^2.0.92",
+    "@mastra/ai-sdk": "^1.0.5",
+    "@mastra/core": "^1.6.0",
+    "@mastra/libsql": "^1.6.0",
+    "ai": "^5.0.137"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
 }

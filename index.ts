@@ -69,12 +69,11 @@ function row(label: string, msgs: number, embeddings: number) {
 
 async function main() {
   // Separate in-memory SQLite instances — each class manages its own connection
-  const storage = new LibSQLStore({ id: 'repro', url: 'file::memory:' });
+  const storage = new LibSQLStore({ id: 'repro', url: 'file:./repro-storage.db' });
   await storage.init();
   const mem = (await storage.getStore('memory')) as MemoryStorage;
 
-  // LibSQLVector also uses in-memory SQLite; same-process connection is stable
-  const vector = new LibSQLVector({ url: 'file::memory:' });
+  const vector = new LibSQLVector({ id: 'vec-repro', url: 'file:./repro-vector.db' });
 
   const base        = openai(MODEL);
   const embedder    = openai.embedding(EMBED_MODEL);
