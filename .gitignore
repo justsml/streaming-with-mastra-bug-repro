@@ -144,6 +144,6 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
-./*.db
+db/
 .claude
 .codex
